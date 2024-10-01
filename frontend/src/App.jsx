@@ -10,7 +10,7 @@ import NoticeBoard from "./Pages/NoticeBoard/Notice";
 import Notification from "./Pages/Notification/Notification";
 import Profile from "./Pages/Profile/Profile";
 import FacilityDetails from "./Pages/Facilities/FacilitiesDetails";
-
+import PatientDetails from "./Pages/Patients/PatientsDetails";
 function App() {
   return (
     <UserContextProvider>
@@ -18,8 +18,11 @@ function App() {
         <Route path="/" element={<Layout></Layout>}>
           <Route path="/facilities" element={<Facilities></Facilities>}></Route>
           <Route path="/facility/:facilityName" element={<FacilityDetails />} />
-
           <Route path="/patients" element={<Patients></Patients>}></Route>
+          <Route
+            path="/patient/:patientName"
+            element={<PatientDetails></PatientDetails>}
+          />
           <Route path="/tests" element={<Tests></Tests>}></Route>
           <Route path="/results" element={<Results></Results>}></Route>
           <Route path="/community" element={<Community></Community>}></Route>

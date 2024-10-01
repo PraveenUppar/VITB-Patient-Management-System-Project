@@ -14,7 +14,7 @@ function FacilityDetails() {
     <div>
       <div className=" p-6 ">
         {/* Header Section */}
-        <div className=" bg-white shadow rounded-lg p-6">
+        <div className=" bg-white shadow-md rounded-lg p-6">
           <div className="flex justify-between items-start mb-2">
             <div>
               <h2 className="text-3xl font-bold mb-4">{facility.name}</h2>
@@ -35,17 +35,30 @@ function FacilityDetails() {
         </div>
 
         {/* Available Features */}
-        <div className="mb-4 mt-6  bg-white shadow rounded-lg p-6">
+        <div className="mb-4 mt-6  bg-white shadow-md rounded-lg p-6">
           <p className="font-bold text-xl text-gray-800">Available Services</p>
           <div className="flex flex-wrap gap-2 mt-2">
             {/* You can modify this section to include features relevant to the facility */}
             {[
               "CT Scan",
-              "Maternity Care",
               "X-Ray",
               "Neonatal Care",
               "Operation Theater",
               "Blood Bank",
+              "Emergency Care",
+              "Surgery",
+              "Pediatric Care",
+              "Radiology",
+              "Cardiology",
+              "Maternity Services",
+              "Orthopedic Care",
+              "Oncology",
+              "Neurology",
+              "Pharmacy",
+              "Physical Therapy",
+              "Laboratory Services",
+              "Dialysis",
+              "Mental Health Services",
             ].map((feature) => (
               <span
                 key={feature}
@@ -58,7 +71,7 @@ function FacilityDetails() {
         </div>
 
         {/* Bed Capacity */}
-        <div className="mt-6 bg-white shadow rounded-lg p-6">
+        <div className="mt-6 bg-white shadow-md rounded-lg p-6">
           <h2 className="text-xl font-bold mb-4">Bed Capacity</h2>
           <div className="grid grid-cols-3 gap-6">
             {/* Total Beds */}
@@ -117,7 +130,7 @@ function FacilityDetails() {
       </div>
       <div className="p-6">
         {/* Staff Capacity Section */}
-        <div className="mb-8 -mt-5 bg-white shadow rounded-lg p-6">
+        <div className="mb-8 -mt-5 bg-white shadow-md rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-4">Staff Capacity</h2>
           <div className="grid grid-cols-5 gap-4">
             {" "}
@@ -155,7 +168,7 @@ function FacilityDetails() {
         </div>
 
         {/* Oxygen Information Section */}
-        <div className=" bg-white shadow rounded-lg p-6">
+        <div className=" bg-white shadow-md rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-4">Oxygen Information</h2>
           <div className="bg-white p-4 rounded-lg shadow">
             <table className="min-w-full border-collapse">
@@ -184,7 +197,7 @@ function FacilityDetails() {
             </table>
           </div>
         </div>
-        <div className=" bg-white shadow rounded-lg p-6 mt-8">
+        <div className=" bg-white shadow-md rounded-lg p-6 mt-8">
           <h2 className="text-xl font-semibold mb-4">Blood Bank Information</h2>
           <div className="bg-white p-4 rounded-lg shadow">
             <table className="min-w-full border-collapse">

@@ -1,89 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
+import { patientsData } from "./PatientData";
+import { useNavigate } from "react-router-dom";
 
 function Patients() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPatients, setFilteredPatients] = useState(patientsData);
+
+  // Search handler to filter based on name or location
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+    const filtered = patientsData.filter(
+      (patient) =>
+        patient.name.toLowerCase().includes(value) ||
+        patient.opdNumber.toLowerCase().includes(value) ||
+        patient.bed.toLowerCase().includes(value)
+    );
+    setFilteredPatients(filtered);
+  };
+
   return (
     <div className="flex">
-      {/* Main Content */}
       <div className="flex-1 p-8 bg-gray-100">
-        {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <div>
-            <h2 className="text-2xl font-bold">Facilities</h2>
-            <p>Total Facilities: 10</p>
-          </div>
-          <div className="flex space-x-4">
-            <button className="bg-teal-600 text-white py-2 px-4 rounded">
-              Export
-            </button>
-            <button className="bg-gray-300 py-2 px-4 rounded">
-              Advanced Filters
-            </button>
-          </div>
+          <h2 className="text-4xl font-bold">Patients</h2>
         </div>
 
-        {/* Search Bar */}
+        {/* Search input */}
         <div className="mb-6">
           <input
             type="text"
+            value={searchTerm}
+            onChange={handleSearch}
             className="w-full p-3 border rounded-md"
-            placeholder="Search by Facility / District Name"
+            placeholder="Search by Patient Name / OPD Number"
           />
         </div>
 
         {/* Facility List */}
-        <div className="grid grid-cols-2 gap-6">
-          <FacilityCard
-            name="Test-August-Secondweek"
-            location="Alathur Block Panchayat, Palakkad District"
-            phone="+91 46722 10678"
-            occupancy="1/18"
-          />
-          <FacilityCard
-            name="Dummy Facility 1"
-            location="Alangad Block Panchayat, Ernakulam District"
-            phone="+91 99999 99888"
-            occupancy="42/0"
-          />
-          <FacilityCard
-            name="NR HOSPITAL"
-            location="Poothrikka Grama Panchayat, Ernakulam District"
-            phone="+91 90723 03850"
-            occupancy="14/38"
-          />
-          <FacilityCard
-            name="Gday Hospital"
-            location="Virajpet"
-            phone="+91 88489 78757"
-            occupancy="3/12"
-          />
-          <FacilityCard
-            name="EKM General Hospital"
-            location="Ernakulam District Panchayat"
-            phone="+91 88935 93812"
-            occupancy="N/A"
-          />
+        <div className="grid grid-cols-3 gap-6">
+          {filteredPatients.map((patient, index) => (
+            <PatientCard
+              key={index}
+              name={patient.name}
+              opdNumber={patient.opdNumber}
+              patient={patient}
+              ward={patient.ward}
+              bed={patient.bed}
+            />
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-const FacilityCard = ({ name, location, phone, occupancy }) => {
+// FacilityCard component to display each facility's information
+const PatientCard = ({ name, ward, bed, patient, opdNumber }) => {
+  const navigate = useNavigate();
+
+  const handleViewFacility = () => {
+    navigate(`/patient/${patient.name}`, { state: { patient } });
+  };
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h3 className="text-xl font-bold mb-2">{name}</h3>
-      <p className="text-gray-600">{location}</p>
-      <p className="text-gray-600">{phone}</p>
-      <div className="flex justify-between items-center mt-4">
-        <span className="text-sm text-gray-500">Occupancy: {occupancy}</span>
-        <div className="space-x-2">
-          <button className="bg-teal-600 text-white py-1 px-3 rounded text-sm">
-            View Facility
-          </button>
-          <button className="bg-gray-300 py-1 px-3 rounded text-sm">
-            View Patients
-          </button>
-        </div>
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <h3 className="text-xl font-semibold mb-2 text-black">{name}</h3>
+      <div className="flex gap-2">
+        <p>
+          <span className="bg-blue-100 text-sm text-black border rounded-sm px-2 py-1 inline-block">
+            OPD Number: {opdNumber}
+          </span>
+        </p>
+        <p>
+          <span className="bg-blue-100 text-sm text-black border rounded-sm px-2 py-1 inline-block">
+            Ward: {ward}
+          </span>
+        </p>
+        <p>
+          <span className="bg-blue-100 text-sm text-black border rounded-sm px-2 py-1 inline-block">
+            Bed Number: {bed}
+          </span>
+        </p>
+      </div>
+
+      {/* View Facility Button */}
+      <div className="mt-2">
+        <button
+          className="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition"
+          onClick={handleViewFacility}
+        >
+          Patient Details
+        </button>
       </div>
     </div>
   );

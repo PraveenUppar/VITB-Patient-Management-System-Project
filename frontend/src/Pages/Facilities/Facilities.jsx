@@ -31,13 +31,13 @@ function Facilities() {
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full p-3 border rounded-md"
+            className="w-full p-3 border shadow-sm rounded-md"
             placeholder="Search by Facility / District Name"
           />
         </div>
 
         {/* Facility List */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2  gap-6">
           {filteredFacilities.map((facility, index) => (
             <FacilityCard
               key={index}
@@ -45,7 +45,6 @@ function Facilities() {
               type={facility.type}
               location={facility.location}
               phone={facility.phone}
-              occupancy={facility.occupancy}
               taluk={facility.taluk}
               district={facility.district}
               facility={facility}
@@ -62,7 +61,6 @@ const FacilityCard = ({
   name,
   location,
   phone,
-  occupancy,
   type,
   taluk,
   district,
@@ -86,9 +84,6 @@ const FacilityCard = ({
       {/* Occupancy information styled */}
       <div className="flex justify-start items-center mt-2 space-x-2">
         <span className="text-sm flex bg-green-100 text-black border  rounded-sm px-2 py-1">
-          Beds: {occupancy}
-        </span>
-        <span className="text-sm flex bg-green-100 text-black border  rounded-sm px-2 py-1">
           ICU
         </span>
         <span className="text-sm flex bg-green-100 text-black border  rounded-sm px-2 py-1">
@@ -103,6 +98,7 @@ const FacilityCard = ({
         <span className="text-sm flex bg-green-100 text-black border  rounded-sm px-2 py-1">
           MRI
         </span>
+        <span>...</span>
       </div>
 
       <p className="text-gray-600 mt-3">
