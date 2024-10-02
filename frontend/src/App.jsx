@@ -4,13 +4,13 @@ import { UserContextProvider } from "./UserContext";
 import Facilities from "./Pages/Facilities/Facilities";
 import Patients from "./Pages/Patients/Patients";
 import Tests from "./Pages/Test/Test";
-import Results from "./Pages/Results/Results";
 import Community from "./Pages/Community/Community";
 import NoticeBoard from "./Pages/NoticeBoard/Notice";
 import Notification from "./Pages/Notification/Notification";
 import Profile from "./Pages/Profile/Profile";
 import FacilityDetails from "./Pages/Facilities/FacilitiesDetails";
 import PatientDetails from "./Pages/Patients/PatientsDetails";
+import TestDetails from "./Pages/Test/TestDetails";
 function App() {
   return (
     <UserContextProvider>
@@ -24,7 +24,7 @@ function App() {
             element={<PatientDetails></PatientDetails>}
           />
           <Route path="/tests" element={<Tests></Tests>}></Route>
-          <Route path="/results" element={<Results></Results>}></Route>
+          <Route path="/test/:testName" element={<TestDetails></TestDetails>} />
           <Route path="/community" element={<Community></Community>}></Route>
           <Route
             path="/noticeboard"

@@ -12,6 +12,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Normal",
   },
   {
     name: "Kavya Reddy",
@@ -26,6 +27,7 @@ export const patientsData = [
     admission_date: "2024-02-15",
     opdNumber: "9876543210",
     dob: "1996-05-12",
+    type: "Moderate",
   },
   {
     name: "Ramesh Gowda",
@@ -40,6 +42,7 @@ export const patientsData = [
     admission_date: "2024-03-10",
     opdNumber: "4567891230",
     dob: "1979-11-23",
+    type: "Critical",
   },
   {
     name: "Anitha Shetty",
@@ -54,6 +57,7 @@ export const patientsData = [
     admission_date: "2024-01-25",
     opdNumber: "7890123456",
     dob: "1989-09-15",
+    type: "Normal",
   },
   {
     name: "Tejasav Khandelwal",
@@ -68,6 +72,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "2345678901",
     dob: "1992-01-01",
+    type: "Moderate",
   },
   {
     name: "Ananya Verma",
@@ -82,6 +87,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "567890123",
     dob: "1992-01-01",
+    type: "Critical",
   },
   {
     name: "Kriti Singh",
@@ -96,6 +102,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "4567890123",
     dob: "1992-01-01",
+    type: "Moderate",
   },
   {
     name: "Pushpak Chanda",
@@ -110,6 +117,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "3456789012",
     dob: "1992-01-01",
+    type: "Critical",
   },
   {
     name: "Vedant Tendulkar",
@@ -124,6 +132,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Normal",
   },
   {
     name: "Vinay Gore",
@@ -138,6 +147,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Critical",
   },
   {
     name: "Akash Singh",
@@ -152,6 +162,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Critical",
   },
   {
     name: "Shaswathi",
@@ -166,6 +177,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Moderate",
   },
   {
     name: "Aryan Shetty",
@@ -180,6 +192,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Normal",
   },
   {
     name: "Abhay",
@@ -194,6 +207,7 @@ export const patientsData = [
     admission_date: "2024-01-01",
     opdNumber: "1234567890",
     dob: "1992-01-01",
+    type: "Normal",
   },
 
   // Add more patients...

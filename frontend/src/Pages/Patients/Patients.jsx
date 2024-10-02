@@ -14,7 +14,8 @@ function Patients() {
       (patient) =>
         patient.name.toLowerCase().includes(value) ||
         patient.opdNumber.toLowerCase().includes(value) ||
-        patient.bed.toLowerCase().includes(value)
+        patient.bed.toLowerCase().includes(value) ||
+        patient.type.toLowerCase().includes(value)
     );
     setFilteredPatients(filtered);
   };
@@ -33,7 +34,7 @@ function Patients() {
             value={searchTerm}
             onChange={handleSearch}
             className="w-full p-3 border rounded-md"
-            placeholder="Search by Patient Name / OPD Number"
+            placeholder="Search by Patient Name / OPD Number / Status"
           />
         </div>
 
@@ -47,6 +48,7 @@ function Patients() {
               patient={patient}
               ward={patient.ward}
               bed={patient.bed}
+              type={patient.type}
             />
           ))}
         </div>
@@ -56,7 +58,7 @@ function Patients() {
 }
 
 // FacilityCard component to display each facility's information
-const PatientCard = ({ name, ward, bed, patient, opdNumber }) => {
+const PatientCard = ({ name, ward, bed, patient, opdNumber, type }) => {
   const navigate = useNavigate();
 
   const handleViewFacility = () => {
@@ -82,6 +84,19 @@ const PatientCard = ({ name, ward, bed, patient, opdNumber }) => {
           </span>
         </p>
       </div>
+      <p>
+        <span
+          className={`text-sm mt-2 text-black border rounded-sm px-2 py-1 inline-block ${
+            type === "Normal"
+              ? "bg-green-100"
+              : type === "Moderate"
+              ? "bg-yellow-100"
+              : "bg-red-100"
+          }`}
+        >
+          Status: {type}
+        </span>
+      </p>
 
       {/* View Facility Button */}
       <div className="mt-2">
