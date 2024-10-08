@@ -31,7 +31,7 @@ function Facilities() {
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full p-3 border shadow-sm rounded-md"
+            className="w-full p-3 border border-gray-400 shadow-sm rounded-md"
             placeholder="Search by Facility / District Name"
           />
         </div>

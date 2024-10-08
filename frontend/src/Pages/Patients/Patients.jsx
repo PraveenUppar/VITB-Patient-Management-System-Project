@@ -25,6 +25,9 @@ function Patients() {
       <div className="flex-1 p-8 bg-gray-100">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-4xl font-bold">Patients</h2>
+          <button className="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition">
+            Add Patient
+          </button>
         </div>
 
         {/* Search input */}
@@ -33,7 +36,7 @@ function Patients() {
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full p-3 border rounded-md"
+            className="w-full p-3 border border-gray-400 rounded-md"
             placeholder="Search by Patient Name / OPD Number / Status"
           />
         </div>

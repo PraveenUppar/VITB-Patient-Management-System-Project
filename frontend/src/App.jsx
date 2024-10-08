@@ -5,12 +5,12 @@ import Facilities from "./Pages/Facilities/Facilities";
 import Patients from "./Pages/Patients/Patients";
 import Tests from "./Pages/Test/Test";
 import Community from "./Pages/Community/Community";
-import NoticeBoard from "./Pages/NoticeBoard/Notice";
-import Notification from "./Pages/Notification/Notification";
+import Emergency from "./Pages/Emergency/Emergency";
 import Profile from "./Pages/Profile/Profile";
 import FacilityDetails from "./Pages/Facilities/FacilitiesDetails";
 import PatientDetails from "./Pages/Patients/PatientsDetails";
 import TestDetails from "./Pages/Test/TestDetails";
+import CommunityDetails from "./Pages/Community/CommunityDetails";
 function App() {
   return (
     <UserContextProvider>
@@ -27,13 +27,11 @@ function App() {
           <Route path="/test/:testName" element={<TestDetails></TestDetails>} />
           <Route path="/community" element={<Community></Community>}></Route>
           <Route
-            path="/noticeboard"
-            element={<NoticeBoard></NoticeBoard>}
-          ></Route>
-          <Route
-            path="/notifications"
-            element={<Notification></Notification>}
-          ></Route>
+            path="/community/:communityName"
+            element={<CommunityDetails></CommunityDetails>}
+          />
+          <Route path="/emergency" element={<Emergency></Emergency>}></Route>
+
           <Route path="/profile" element={<Profile></Profile>}></Route>
         </Route>
       </Routes>

@@ -24,6 +24,9 @@ function Tests() {
       <div className="flex-1 p-8 bg-gray-100">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-4xl font-bold">Tests / Results</h2>
+          <button className="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition">
+            Add Test
+          </button>
         </div>
 
         {/* Search input */}
@@ -32,13 +35,13 @@ function Tests() {
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full p-3 border rounded-md"
+            className="w-full p-3 border border-gray-400 rounded-md"
             placeholder="Search by OPD Number / Test Number / Status"
           />
         </div>
 
         {/* Test Cards */}
-        <div className="grid p-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredTests.map((test, index) => (
             <TestCard key={index} test={test} />
           ))}
@@ -57,7 +60,7 @@ const TestCard = ({ test }) => {
   };
 
   return (
-    <div className="p-6 bg-white-100 rounded-lg shadow-lg border ">
+    <div className="p-4 bg-white rounded-lg shadow-lg border ">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-semibold  ">{test.name}</h3>
       </div>
