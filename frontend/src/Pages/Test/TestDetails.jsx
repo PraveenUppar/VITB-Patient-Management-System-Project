@@ -150,26 +150,7 @@ const TestsDetails = () => {
 
           {/* Test Results Section */}
           <h3 className="text-2xl font-bold mb-4 mt-6">Test Results</h3>
-          <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
-            <tbody className="bg-white divide-y divide-gray-200">
-              <tr>
-                <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-800 border border-gray-300">
-                  Result Date:
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap border border-gray-300">
-                  {test.resultDate}
-                </td>
-              </tr>
-              <tr>
-                <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-800 border border-gray-300">
-                  Outcome:
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap border border-gray-300">
-                  {test.outcome}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <input type="file" className="mb-4" />
 
           {/* Test History Section */}
           <div className="mt-6">
