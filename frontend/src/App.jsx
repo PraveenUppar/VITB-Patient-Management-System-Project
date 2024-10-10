@@ -7,6 +7,7 @@ import Tests from "./Pages/Test/Test";
 import Community from "./Pages/Community/Community";
 import Emergency from "./Pages/Emergency/Emergency";
 import Profile from "./Pages/Profile/Profile";
+import Home from "./Pages/Home/Home";
 import FacilityDetails from "./Pages/Facilities/FacilitiesDetails";
 import PatientDetails from "./Pages/Patients/PatientsDetails";
 import TestDetails from "./Pages/Test/TestDetails";
@@ -16,6 +17,8 @@ function App() {
     <UserContextProvider>
       <Routes>
         <Route path="/" element={<Layout></Layout>}>
+          <Route path="/" element={<Home></Home>}></Route>
+
           <Route path="/facilities" element={<Facilities></Facilities>}></Route>
           <Route path="/facility/:facilityName" element={<FacilityDetails />} />
           <Route path="/patients" element={<Patients></Patients>}></Route>
