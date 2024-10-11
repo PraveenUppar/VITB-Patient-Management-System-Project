@@ -1,18 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
+const { mongoose } = require("mongoose");
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-/* 
-const User = require("./models/User.js");
+const User = require("../models/User.js");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+
+const app = express();
 const salt = bcrypt.genSaltSync(10);
 const secret = bcrypt.genSaltSync(10);
 
@@ -26,9 +22,22 @@ app.use(
 );
 
 mongoose.connect(
-  "mongodb+srv://praveenuppar718:ZDATCXHlcHdrYVEr@pms.8zjsr.mongodb.net/?retryWrites=true&w=majority&appName=PMS"
-); //
+  "mongodb+srv://praveenuppar718:j0KQHWzhEQ1laPA1@pms.8zjsr.mongodb.net/?retryWrites=true&w=majority&appName=PMS"
+);
 
+app.post("/register", async (req, res) => {
+  const { name, email, password } = req.body;
+  try {
+    const userDoc = await User.create({
+      name,
+      email,
+      password: bcrypt.hashSync(password, salt),
+    });
+    res.json(userDoc);
+  } catch (e) {
+    res.status(400).json(e);
+  }
+});
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await User.findOne({ email });
@@ -57,7 +66,7 @@ app.get("/profile", (req, res) => {
     res.json(info);
   });
 });
-*/
+
 app.listen(7000, () => {
-  console.log("server running on localhost:7000");
+  console.log("Server running on localhost:7000");
 });

@@ -15,6 +15,13 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <div className="flex justify-center mb-6">
+          <a href="/login">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded">
+              Login
+            </button>
+          </a>
+        </div>
       </section>
 
       <section>
@@ -22,6 +29,7 @@ const Home = () => {
           {/* Content Section */}
           <div className="content flex flex-col lg:flex-row gap-8 ">
             {/* Why Choose Medilab Box */}
+
             <div className="lg:w-1/3 flex justify-center">
               <div
                 className="why-box bg-white p-6 rounded shadow-md"
