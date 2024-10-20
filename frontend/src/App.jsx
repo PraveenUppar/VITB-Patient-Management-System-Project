@@ -18,9 +18,10 @@ function App() {
   return (
     <UserContextProvider>
       <Routes>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+
         <Route path="/" element={<Layout></Layout>}>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="login" element={<Login></Login>}></Route>
           <Route path="register" element={<Register></Register>}></Route>
           <Route path="/facilities" element={<Facilities></Facilities>}></Route>
           <Route path="/facility/:facilityName" element={<FacilityDetails />} />
@@ -36,7 +37,6 @@ function App() {
             path="/community/:communityName"
             element={<CommunityDetails></CommunityDetails>}
           />
-
           <Route path="/profile" element={<Profile></Profile>}></Route>
         </Route>
       </Routes>

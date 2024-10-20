@@ -6,7 +6,7 @@ const Sidebar = () => {
       <div className="flex sticky top-0 h-screen">
         <div className="w-72 bg-teal-900 h-screen p-6 flex flex-col justify-between text-white">
           <div>
-            <Link to="/">
+            <Link>
               <h1 className="text-4xl font-bold mb-8">
                 Patient Management System
               </h1>
@@ -146,7 +146,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="/login"
+                  href="/"
                   className="flex items-center gap-2 block p-2 rounded-lg hover:bg-teal-700 hover:shadow-lg transition-all duration-300 ease-in-out"
                 >
                   <svg

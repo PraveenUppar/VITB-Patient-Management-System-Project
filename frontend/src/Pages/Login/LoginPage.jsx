@@ -23,62 +23,95 @@ const Login = () => {
         alert("Login Successful !! Redirecting to Home Page");
       });
     } else {
-      alert("Check your Username and Password");
+      alert("Incorrect Username or Password");
     }
   }
 
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/facilities" />;
   }
 
   return (
-    <div className=" mt-36 bg-gray-100">
-      {/* Left Section: Login Form */}
-      <div className="w-full max-w-md p-8 m-auto bg-white rounded-md shadow-lg">
-        <h2 className="text-3xl font-semibold text-center text-gray-800">
-          Welcome back!
-        </h2>
-        <p className="text-center text-gray-500">
-          Enter your Credentials to access your account
-        </p>
+    <div className="min-h-screen flex">
+      {/* Left Section - Content */}
+      <div className="w-full md:w-1/2 bg-[#09342D] text-white p-8 flex flex-col justify-between">
+        <div className="max-w-md mx-auto mt-12">
+          {/* Title and Text */}
+          <h1 className="text-5xl font-bold mb-4">PMS</h1>
+          <p className="text-xl">
+            Our goal is to continuously improve the quality and accessibility of
+            public healthcare services using digital tools.
+          </p>
+        </div>
+        {/* Footer Section */}
+        <div className="max-w-md mx-auto text-md mt-4">
+          <p>
+            Streamlining hospital operations and improving patient care through
+            an intuitive and integrated management platform.
+          </p>
+        </div>
+      </div>
 
-        <form className="mt-6" onSubmit={login}>
-          <div className="mb-4">
-            <label className="block text-gray-700" htmlFor="email">
-              Email address
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-green-400 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(ev) => setEmail(ev.target.value)}
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-green-400 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(ev) => setPassword(ev.target.value)}
-            />
-            <a href="#" className="text-sm text-green-600 hover:underline">
-              Forgot password?
-            </a>
-          </div>
-          <button
-            type="submit"
-            className="w-full px-4 py-2 mt-2 text-white bg-green-600 rounded-md hover:bg-green-700 focus:bg-green-700 focus:outline-none"
-          >
-            Login
-          </button>
-        </form>
+      {/* Right Section - Login */}
+      <div className="w-full md:w-1/2 bg-white flex items-center justify-center p-8">
+        <div className="max-w-md w-full">
+          <h2 className="text-4xl font-bold text-green-700 mb-6 text-right">
+            Authorized Login
+          </h2>
+          <form className="space-y-6" onSubmit={login}>
+            {/* Email Input */}
+            <div>
+              <label
+                className="block text-lg font-medium text-gray-700"
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="mt-1 block w-full px-5 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-md"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(ev) => setEmail(ev.target.value)}
+              />
+            </div>
+
+            {/* Password Input */}
+            <div>
+              <label
+                className="block text-lg font-medium text-gray-700"
+                htmlFor="password"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="mt-1 block w-full px-5 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-md"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(ev) => setPassword(ev.target.value)}
+              />
+              <a
+                href="#"
+                className="text-md text-green-600 hover:underline float-right mt-2"
+              >
+                Forgot password?
+              </a>
+            </div>
+
+            {/* Login Button */}
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-xl text-white py-3 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              Login
+            </button>
+          </form>
+
+          {/* Language Options */}
+        </div>
       </div>
     </div>
   );
