@@ -57,6 +57,9 @@ const PatientsDetails = () => {
               Emergency Phone No:{" "}
               <span className="font-normal">{patient.emergency_phone}</span>
             </p>
+            <button className="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
       </div>
@@ -128,6 +131,9 @@ const PatientsDetails = () => {
                 </tr>
               </tbody>
             </table>
+            <button className="bg-teal-600 text-white py-2 mt-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
 
@@ -151,6 +157,9 @@ const PatientsDetails = () => {
                 </tr>
               </tbody>
             </table>
+            <button className="bg-teal-600 text-white py-2 mt-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
         <div className=" bg-white shadow-md mt-8 rounded-lg p-6">
@@ -177,6 +186,9 @@ const PatientsDetails = () => {
                 </tr>
               </tbody>
             </table>
+            <button className="bg-teal-600 text-white py-2 mt-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
         <div className="  bg-white shadow-md mt-8 rounded-lg p-6">
@@ -208,6 +220,9 @@ const PatientsDetails = () => {
                 </tr>
               </tbody>
             </table>
+            <button className="bg-teal-600 text-white py-2 mt-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
         <div className="  bg-white shadow-md mt-8 rounded-lg p-6">
@@ -253,6 +268,9 @@ const PatientsDetails = () => {
                 </tr>
               </tbody>
             </table>
+            <button className="bg-teal-600 text-white py-2 mt-2 px-4 rounded hover:bg-teal-700 transition">
+              Edit Details
+            </button>
           </div>
         </div>
       </div>
