@@ -38,7 +38,7 @@ const Hero = () => {
           seamless integration of resources, doctor communities, and patient
           care solutions.
         </animated.p>
-        <Link to="/login">
+        <Link to="/facilities">
           <animated.a
             href="#get-started"
             className="mt-6 inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition duration-300"

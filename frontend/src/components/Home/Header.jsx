@@ -75,7 +75,7 @@ const Header = () => {
           </nav>
 
           {/* Login and Registration */}
-          <Link to="/login">
+          <Link to="/facilities">
             <div className="hidden md:flex text-lg items-center font-semibold space-x-4">
               <a
                 href="/get-started"
